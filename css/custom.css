@@ -1,0 +1,408 @@
+:root{
+    --body-bg: #DDE2F0;
+    --font-family-regular: 'Jost-Regular';
+    --font-family-semiBold: 'Jost-SemiBold';
+    --font-family-medium: 'Jost-Medium';
+    --font-family-bold: 'Jost-Bold';
+    --base-font-size: 0.9375rem;
+    --secondary-font-size: 1.15rem;
+    --primary-text: #191D26;
+    --primary-text-light: rgba(25,29,39,0.5);
+    --primary-color: #0092D4;
+    --card-radius: 10px;
+    --card-bg-blue: 0, 146, 212;
+    --card-bg-red: 229, 48, 45;
+    --card-bg-green: 40, 168, 63;
+    --card-bg-yellow: 251, 191, 27;
+    --alpha: 0.08;
+    --input-radius: 6px;
+    --input-border-color: rgba(25,29,39,0.20);
+}
+html, body{
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-size: var(--base-font-size);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--primary-text);
+    background-color: #ffffff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    font-family: var(--font-family-regular), sans-serif;
+}
+@font-face {
+    font-family: "Jost-Regular";
+    src: url("../fonts/Jost-Regular.ttf") format("truetype");
+    font-stretch: normal;
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Jost-SemiBold";
+    src: url("../fonts/Jost-SemiBold.ttf") format("truetype");
+    font-stretch: normal;
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Jost-Medium";
+    src: url("../fonts/Jost-Medium.ttf") format("truetype");
+    font-stretch: normal;
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Jost-Bold";
+    src: url("../fonts/Jost-Bold.ttf") format("truetype");
+    font-stretch: normal;
+    font-weight: 700;
+    font-style: normal;
+}
+p{
+    line-height: calc(var(--base-font-size) + 6px);
+
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    color: var(--primary-text);
+}
+.primary-text{
+    color: var(--primary-text);
+}
+.primary-text-light{
+    color: var(--primary-text-light);
+}
+.body-wrapper{
+    background-color: var(--body-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    background-color: var(--body-bg);
+    padding: 15px 0px;
+}
+.company-logo{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    border-radius: 100%;
+}
+.company-logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.back-arrow{
+    max-width: 80% !important;
+    max-height: 80% !important;
+}
+.company-logo:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+.header-title{
+    font-size: var(--secondary-font-size);
+    font-family: var(--font-family-semiBold);
+}
+.profile-pic{
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+.user-image{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.body-content{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    position: relative;
+    padding-top: 68px;
+}
+
+.card-view-section{
+    background-color: var(--body-bg);
+    position: sticky;
+    top: 68px;
+    z-index: 1;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+.view-buttons .radio-btn:not(:last-child){
+    margin-right: 10px;
+}
+.view-buttons .radio-btn .btn{
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border-color: rgba(57, 67, 84, 0.20);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--input-radius);
+}
+.view-buttons .radio-btn .btn img{
+    max-width: 16px;
+    max-height: 16px;
+    opacity: 0.5;
+}
+.view-buttons .radio-btn .btn-check:checked+.btn{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.view-buttons .radio-btn .btn-check:checked+.btn img{
+    filter: grayscale(100%) brightness(100);
+    opacity: 1;
+}
+.patients-list.row{
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+.patients-list.row > [class*="col-"]{
+    padding: 7.5px;
+    transition: width ease-in-out 0.3s;
+}
+.patients-list .user-card{
+    border-radius: var(--card-radius);
+    border-color: #ffffff;
+    height: 100%;
+}
+.patients-list a.user-card, .user-card-hover{
+    text-decoration: none;
+    transition: all ease 0.3s;
+    height: 100%;
+}
+.patients-list [class*="col-"] a.user-card:hover,
+.user-card-hover:hover{
+    box-shadow: 0 0 5px rgba(0,0,0,0.14);
+    transform: scale(1.015);
+    background-color: #ffffff !important;
+    cursor: pointer;
+}
+.patients-list .user-card .card-body{
+    padding: 10px;
+}
+.patients-list .user-card:not(:last-child){
+    margin-bottom: 10px;
+}
+.patients-list [class*="col-"]:nth-child(1n) .user-card{
+    background-color: rgba(var(--card-bg-blue), var(--alpha));
+}
+.patients-list [class*="col-"]:nth-child(2n) .user-card{
+    background-color: rgba(var(--card-bg-red), var(--alpha));
+}
+.patients-list [class*="col-"]:nth-child(3n) .user-card{
+    background-color: rgba(var(--card-bg-green), var(--alpha));
+}
+.patients-list [class*="col-"]:nth-child(4n) .user-card{
+    background-color: rgba(var(--card-bg-yellow), var(--alpha));
+}
+
+.patients-list .user-card .user-img-box{
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: var(--input-radius);
+    box-shadow: 0 2px 4px 2px rgba(0,0,0,0.14);
+    overflow: hidden;
+}
+.patients-list .user-card .user-img-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.patients-list .user-card .user-name{
+    font-size: 1.125rem;
+    font-family: var(--font-family-bold);
+
+
+    
+    margin-bottom: 0;
+}
+.patients-list:not(.grid) .user-card .user-details .primary-text-light{
+    margin-top: 5px;
+}
+.patients-list .user-card .user-details{
+    margin-bottom: 1rem;
+}
+.patients-list .user-card .primary-text{
+    font-family: var(--font-family-semiBold);
+}
+.patients-list .user-card .primary-text-light{
+    color: var(--primary-text);
+}
+
+.patients-list.grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.patients-list.grid .user-card{
+    flex: 0 0 auto;
+    width: 100%;
+    
+}
+.patients-list.grid .user-card .user-card-media{
+    flex-direction: column;
+}
+.patients-list.grid .user-card .user-card-media .user-img-box{
+    width: 100%;
+    height: 90px;
+}
+.patients-list.grid .user-card .user-card-media .user-img-box img{
+    object-fit: contain;
+}
+.patients-list.grid .user-card .user-card-media .user-card-body{
+   margin-left: 0 !important;
+   margin-top: 10px;
+}
+.patients-list.grid .user-card .user-card-media .user-card-body .row [class*="col-"]{
+    flex: 0 0 auto;
+    width: 100%;
+ }
+ .patients-list.grid .user-card .user-card-media .user-card-body  .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+ }
+ .patients-list.grid .user-card .user-card-media .user-card-body .user-details .primary-text{
+    margin-right: 2px;
+ }
+ .patients-list:not(.grid) .user-card .user-card-media .user-card-body .row{
+    margin-left: -5px;
+    margin-right: -5px;
+ }
+ .patients-list:not(.grid) .user-card .user-card-media .user-card-body .row [class*="col-"]{
+    padding-left: 5px;
+    padding-right: 5px;
+ }
+
+  /*-----select 2 css-----*/
+
+ .select2.select2-container {
+    width: 100% !important;
+ }
+ .select2-container--bootstrap-5 .select2-selection{
+    border-radius: var(--input-radius);
+    border-color: var(--input-border-color);
+    font-size: var(--base-font-size);
+    color: var(--primary-text);
+    font-family: var(--font-family-medium);
+    padding: 0.625rem 2.25rem 0.625rem 1.25rem;
+    height: auto;
+ }
+ .select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered .select2-selection__placeholder{
+    color: #d1d1d1;
+ }
+ .select2-container .select2-selection--single .select2-selection__rendered{
+    white-space: normal;
+ }
+ .select2-container--bootstrap-5.select2-container--focus .select2-selection, .select2-container--bootstrap-5.select2-container--open .select2-selection{
+    box-shadow: none;
+    border-color: rgb(var(--card-bg-blue));
+ }
+ .select2-container--bootstrap-5 .select2-dropdown{
+    border-radius: var(--input-radius);
+    border-color: rgb(var(--card-bg-blue));
+    color: var(--primary-text);
+ }
+ .select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field{
+    border-color: var(--input-border-color);
+    border-radius: var(--input-radius);
+ }
+ .select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field:focus{
+    box-shadow: none;
+    border-color: rgb(var(--card-bg-green));
+ }
+ .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option{
+    font-size: var(--base-font-size);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    
+ }
+ .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected{
+    background-color: rgb(var(--card-bg-blue));
+ }
+
+ /*-----accordion css-----*/
+ .accordion{
+    border-radius: 0;
+ }
+ .accordion .accordion-item{
+    margin-bottom: 10px;
+    border-radius: var(--card-radius);
+    border: 0;
+    box-shadow: 0 2px 4px 2px rgba(0,0,0,0.14);
+ }
+ .accordion .accordion-item .accordion-header .accordion-button{
+    padding: 12px 10px;
+    font-family: var(--font-family-medium);
+    color: var(--primary-text);
+    font-size: var(--base-font-size);
+    border-radius: var(--card-radius);
+ }
+ .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed){
+    background-color: #ffffff;
+    box-shadow: none;
+    color: rgb(var(--card-bg-blue));
+ }
+ .accordion-button::after, .accordion-button:not(.collapsed)::after{
+    width: 12px;
+    height: 7px;
+    background-image: url(../img/icons/arrow-down.svg);
+    background-size: 12px;
+ }
+ .accordion .accordion-item .accordion-header .accordion-button:focus{
+    box-shadow: none;
+ }
+ .accordion .accordion-body{
+    padding-top: 0.25rem;
+ }
+ .seizures-section:not(:last-child){
+    margin-bottom: 10px;
+ }
+ .seizures-section h4{
+    font-size: var(--base-font-size);
+    margin-bottom: 5px;
+    font-family: var(--font-family-bold);
+ }
+ .seizures-section ul{
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+ }
+ .seizures-section ul li{
+    color: var(--primary-text);
+ }
+ .seizures-section ul li:not(:last-child){
+    margin-bottom: 10px;
+ }
+ .seizures-section ul li p{
+    margin-bottom: 8px;
+ }
+ .seizures-section ul li p:last-child{
+    margin-bottom: 0;
+ }
+ .seizures-section ul li ul{
+    margin-bottom: 1rem;
+ }
+ .selected-section{
+    display: none;
+ }
+ .medication-list.row [class*="col-"] .user-card{
+    background-color: #ffffff;
+ }
+.selected-section .user-name{
+    margin-bottom: 10px !important;
+}
